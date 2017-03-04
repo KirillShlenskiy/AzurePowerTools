@@ -264,7 +264,7 @@ namespace Devbridge.BasicAuthentication
 
         private void InitCredentials(Configuration.BasicAuthenticationConfigurationSection basicAuth)
         {
-            this.activeUsers = new Dictionary<string, string>();
+            this.activeUsers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
             for (int i = 0; i < basicAuth.Credentials.Count; i++)
             {
